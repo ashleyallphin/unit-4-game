@@ -1,0 +1,29 @@
+/*
+
+COLORS =========
+#36B9ED - blue
+#FADC13 - yellow
+#770F3D - purple
+#ED1E79 - pink
+white
+
+*/
+
+body {
+    background-color: #FADC13;
+}
+
+h1 {
+    font-family: 'Anton', sans-serif;
+    color: #ED1E79;
+    text-transform: uppercase;
+    font-size: 50px;
+}
+
+.jumbotron {
+  text-align: center;
+  background-color: white;
+}
+
+.jumbotron img {
+}
