@@ -62,14 +62,16 @@ var getRandom = function(min, max) {
 }
 
 
-var StartGame = function() {
+var startGame = function() {
     //pick random targetSum number 19-120
     targetSum = Math.floor(Math.random() * 120 + 19);
     //testing
     console.log("targetSum: " + targetSum);
 
     //reset userSum to 0
-    var userSum = 0;
+    userSum = 0;
+    $( "#your-sum-text" ).html(userSum);
+
 
     //log to HTML
     $( "#target-sum-text" ).html(targetSum);
@@ -122,6 +124,10 @@ var checkWin = function() {
 
         //add losses to HTML
         $("#losses-text").html(lossCount);
+
+        //restart game
+        startGame();
+        console.log(userSum);
     }
     else if (userSum === targetSum) {
         
@@ -139,6 +145,9 @@ var checkWin = function() {
         //add wins to HTML
         $("#wins-text").html(winCount);
 
+        //restart game
+        startGame();
+
     }
 }
 
@@ -147,7 +156,7 @@ var checkWin = function() {
 //=================================================
 
 //starts the game for the first time
-StartGame();
+startGame();
 
 //click functions for the gems
 
