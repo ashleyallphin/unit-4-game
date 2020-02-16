@@ -1,202 +1,109 @@
 //PSEUDOCODE
 //=================================================
-//display directions to user
-//number of guesses remaining starts at 10
-//directions will disappear when key is pressed
-//need an array of strings of British things
-//computer picks random variable from the array
-//computer counts the number of characters in the answer
-//computer displays number of characters in the random variable from the array (var answer) as underscores
-//user guesses a letter
-//if the letter is in the variable, the letter will replace the underscore
-//if the letter is not in the variable, the number of attempts remaining will decrease by 1
-//if the user guesses all of the letters, the wins will increase by 1
-//if the user guesses the answer, the image will change
-//if the attempts remaining hits 0, the user will lose
-//the guesses will be displayed to the user as they guess them
+//randomize number for Target Sum between 19 and 120
+//assign crystals a value between 1 and 12
+//on click, register the value of the gem clicked
+//add value of gym to 'your sum'
+//if your sum equals target sum, user wins
+//win++
+//if your sum > target sum, user loses
+//loss++
+//reset game
+
 
 
 //GLOBAL VARIABLES
 //=================================================
 
-//possible answers
-var hangmanArray = ["wimbledon", "thegreatbritishbakeoff", "kuruptfm", "londonbridge", "themightyboosh"];
-// images
-var hangmanImages = ["wimbledon.jpg", "thegreatbritishbakingshow.jpg", "kuruptfm.jpg", "londonbridge.jpg", "themightyboosh.jpg"]
-//answer the computer chose from hangmanArray
-var answer = "";
-//image to match answer the computer chose from hangmanArray
-var correctImage = "";
-//characters in the correct answer
-var charactersInAnswer = [];
-//letters in the correct answer (no spaces)
-var lettersInAnswer = [];
-//number of blanks for the correct answer
-var numberOfUnderscores = 0;
-//like a _ _ l _ e _
-var underscoresAndCorrectLetters = [];
-//incorrect guesses the user has pressed
-var wrongGuesses = [];
-//number of times the user has won
+
+//sums
+var userSum = 0;
+var targetSum = 0; 
+
+
+//values of the crystals
+//object is gem with value property
+var gem = {
+    gem1:
+    {
+        name: "Gem1",
+        value: 0
+    },
+    gem2:
+    {
+        name: "Gem2",
+        value: 0
+    },
+    gem3:
+    {
+        name: "Gem3",
+        value: 0
+    },
+    gem4:
+    {
+        name: "Gem4",
+        value: 0
+    }
+}
+
+//wins and loss counter
 var winCount = 0;
-//number of guesses the user has left
-var guessesLeft = 10;
-var questionMarks = "assets/images/questionmarks.png";
-var directions = "Press a key to guess a letter."
-
-
-
+var lossCount = 0;
 
 
 //FUNCTIONS
 //=================================================
 
+var StartGame = function() {
+    //pick random targetSum number 19-120
+    targetSum = Math.floor(Math.random() * 120 +1 + 19)
+    //testing
+    console.log("targetSum: " + targetSum)
 
 
-function startGame () {
-    //select an answer
-    var randomNumber = Math.floor(Math.random() * hangmanArray.length);
-    answer = hangmanArray[randomNumber];
-    //match correct image to answer
-    correctImage = hangmanImages[randomNumber];
-    //console.log(correctImage);
-    //console.log(answer);
-    //replaces spaces with nothing *took this out*
-    //splits the letters in answer into individual segments
-    lettersInAnswer = answer.split("");
-    //change the letters into underscores
-    numberOfUnderscores = lettersInAnswer.length;
+    //assign random values to crystals 1-12
+    gem1 = Math.floor(Math.random() * 12) + 1;
+    gem2 = Math.floor(Math.random() * 12) + 1;
+    gem3 = Math.floor(Math.random() * 12) + 1;
+    gem4 = Math.floor(Math.random() * 12) + 1;
+    //testing
+    console.log("gem1: " + gem1)
+    console.log("gem2: " + gem2)
+    console.log("gem3: " + gem3)
+    console.log("gem4: " + gem4)
 
-    //resetting for another round
-    guessesLeft = 10;
-    wrongGuesses = [];
-    underscoresAndCorrectLetters = [];
+    //reset userSum to 0
+    var userSum = 0;
 
 
+    //log to HTML
+    $( "#target-sum-text" ).html(targetSum);
 
-    //show underscores for each letter in answer
-    for (var i=0; i<numberOfUnderscores; i++) {
-        underscoresAndCorrectLetters.push("_");
-    }
-
-    //show underscores in the HTML
-    document.getElementById("answer-text").innerHTML = underscoresAndCorrectLetters.join(" ");
-    //show the number of guesses left
-    document.getElementById("attempts-left-text").innerHTML = guessesLeft;
-    // show winning image
-    document.getElementById("img").innerHTML = correctImage;
-    //remove directions
-    document.getElementById("directions-text-mobile").innerHTML = directions;
-    document.getElementById("directions-text-desktop").innerHTML = directions;
-
-} 
-
-function check(letter) {
- var isLetterCorrect = false;
-    //checks to see if letter is in answer
-    for (var i = 0; i < numberOfUnderscores; i++) {
-        if(answer[i] == letter) {
-            underscoresAndCorrectLetters[i] = letter;
-            isLetterCorrect = true; 
-       }
-    }
-
-    if (!isLetterCorrect) {
-
-            wrongGuesses.push(letter);
-            guessesLeft--;
-
-    }
-}
-
-function nextRound() {
-    
-    //keep track of everything in HTML
-    document.getElementById("img").src = questionMarks;
-    document.getElementById("wins-text").innerHTML = winCount;
-    document.getElementById("attempts-left-text").innerHTML = guessesLeft;
-    document.getElementById("answer-text").innerHTML = underscoresAndCorrectLetters.join(" ");
-    document.getElementById("guessed-letters-text").innerHTML = wrongGuesses.join("   ");
-
-    //if user wins
-    if (lettersInAnswer.toString() == underscoresAndCorrectLetters.toString()) {
-        
-        //show kuruptfm.jpg on win
-        //document.getElementById("img").src = "assets/images/kuruptfm.jpg";
-        //console.log(correctImage);
-
-        //show CORRESPONDING IMAGE ON WIN
-        document.getElementById("img").src = "assets/images/" + correctImage;
-        //testing console.log(correctImage);
-
-        //increase wins
-        winCount++;
-
-        //alert "You win!"
-        alert("Well done you!");
-        
-        //play sound "You win!"
-        var audioWin = new Audio('assets/sounds/jollygood.m4a');
-        audioWin.play();
-
-        //update winCount on page
-        document.getElementById("wins-text").innerHTML = winCount;
-
-        //start a new game
-        startGame();
-    }
-        //if user loses
-    else if (!guessesLeft) {
-        
-        //alert the user "You lose."
-        alert ("Sorry, mate.");
-        
-        //play sound "You lose!"
-        var audioLose = new Audio('assets/sounds/ghastly.m4a');
-            audioLose.play();
-            
-        //start new game
-            startGame();
-    }
-
-
+    console.log(targetSum)
 
 }
-
-
-
 //CALL FUNCTIONS
 //=================================================
 
-//to start the game
-startGame();
+$("#gem1").click(function() {
+    //testing
+    //alert("gem1")
+});
 
-//registering keys pressed
-document.onkeyup = function(event) {
-    
+$("#gem2").click(function() {
+    //testing
+    //alert("gem2")
+});
 
-    //only letters accepted
-    if (event.keyCode >= 65 && event.keyCode <= 90) {
-    letterGuessed = event.key;
+$("#gem3").click(function() {
+    //testing
+    //alert("gem3")
+});
 
-    //doesn't allow wrong guesses to be repeated
-        if (wrongGuesses.indexOf(letterGuessed) !== -1) {
-            alert("You've already guessed that letter.");
-            return;
-            }
-        
-        var guessedLetter = String.fromCharCode(event.keyCode).toLowerCase();
-        
-        //run check for guessed letter in answer
-        check(guessedLetter);
-        
-        //run next round
-        nextRound();
+$("#gem4").click(function() {
+    //testing
+    //alert("gem4")
+});
 
-
-
-    }
-}
-
-
+StartGame();
 
