@@ -80,6 +80,7 @@ h1 {
     background-color: #FADC13;
 }
 
-footer {
+footer .h6 {
     padding: 100px;
+    font-size: x-small;
 }
