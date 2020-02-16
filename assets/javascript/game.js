@@ -83,11 +83,8 @@ var StartGame = function() {
     console.log("gem3: " + gem.gem3.value);
     console.log("gem4: " + gem.gem4.value);
 
-    //log to HTML
-    $( "#target-sum-text" ).html(targetSum);
 
     //put into HTML
-    $( "#your-sum-text" ).html(userSum);
 
 }
 
@@ -96,8 +93,11 @@ var addValues = function (gem) {
 
     userSum = userSum + gem.value;
 
+    $( "#your-sum-text" ).html(userSum);
+
+
     //testing
-    console.log("your score is: " + userSum)
+    console.log("userSum= " + userSum)
 
 }
 
