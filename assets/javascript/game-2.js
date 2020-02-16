@@ -53,10 +53,6 @@ var lossCount = 0;
 
 //FUNCTIONS
 //=================================================
-var getRandom = function(min, max) {
-    return Math.floor(Math.random() * (max - min +1)) + min;
-}
-
 
 var StartGame = function() {
     //pick random targetSum number 19-120
@@ -64,39 +60,32 @@ var StartGame = function() {
     //testing
     console.log("targetSum: " + targetSum);
 
+
+    //assign random values to crystals 1-12
+    gem1 = Math.floor(Math.random() * 12) + 1;
+    gem2 = Math.floor(Math.random() * 12) + 1;
+    gem3 = Math.floor(Math.random() * 12) + 1;
+    gem4 = Math.floor(Math.random() * 12) + 1;
+    
+    //testing
+    console.log("gem1: " + gem1);
+    console.log("gem2: " + gem2);
+    console.log("gem3: " + gem3);
+    console.log("gem4: " + gem4);
+
     //reset userSum to 0
     var userSum = 0;
 
     //log to HTML
     $( "#target-sum-text" ).html(targetSum);
 
-    //pick random numbers for the crystals
-    gem.gem1.value = getRandom(1, 12);
-    gem.gem2.value = getRandom(1, 12);
-    gem.gem3.value = getRandom(1, 12);
-    gem.gem4.value = getRandom(1, 12);
+}
 
-    
-    //testing
-    console.log("gem1: " + gem.gem1.value);
-    console.log("gem2: " + gem.gem2.value);
-    console.log("gem3: " + gem.gem3.value);
-    console.log("gem4: " + gem.gem4.value);
+    //calculate userSum
 
-    //log to HTML
-    $( "#target-sum-text" ).html(targetSum);
 
     //put into HTML
     $( "#your-sum-text" ).html(userSum);
-
-}
-
-//add the clicks together
-var addValues = function (gem) {
-    userSum = userSum + gem.value;
-}
-
-
 
 
 //CALL FUNCTIONS
@@ -105,21 +94,34 @@ var addValues = function (gem) {
 //starts the game for the first time
 StartGame();
 
-//click functions for the gems
+$("#gem1").click(function() {
+    //testing
+    //alert("gem1")
+    userSum = userSum + gem1;
+    console.log(gem1 + userSum);
+});
 
-$("#gem1").click(function(){
-    alert("you clicked on: gem1")
-})
+$("#gem2").click(function() {
+    //testing
+    //alert("gem2")
+    console.log(gem2 + userSum);
+});
 
-$("#gem2").click(function(){
-    alert("you clicked on: gem2")
-})
+$("#gem3").click(function() {
+    //testing
+    //alert("gem3")
+    console.log(gem2 + userSum);
+});
 
-$("#gem3").click(function(){
-    alert("you clicked on: gem3")
-})
+$("#gem4").click(function() {
+    //testing
+    //alert("gem4")
+    console.log(gem2 + userSum);
+});
 
-$("#gem4").click(function(){
-    alert("you clicked on: gem4")
-})
+
+
+
+
+
 
