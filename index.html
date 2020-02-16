@@ -13,9 +13,11 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">   <link href="https://fonts.googleapis.com/css?family=Covered+By+Your+Grace|Montserrat&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
+    <!-- CSS rest -->
     <link rel="stylesheet" href="assets/css/reset.css">
+    <!-- Bootstrap CSS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- my CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
@@ -23,96 +25,87 @@
 <body>
 
     <div class=container>
-       
-        <!-- title of game-->
-        <div class=row>
 
-        <div class="jumbotron col-12">
-            <h1 class="text-center">
-                <img src="assets/images/gem2.svg" alt="gem2" style="width: 80px;">
-                Crystal Collector
-                <img src="assets/images/gem2.svg" alt="gem2" style="width: 80px;">
-            </h1>
-        </div>
-    </div>
+   
+
         
-    <div class=row>
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-            <h5 class="panel-title text-center">Instructions</h5>
-            </div>
-            <div class="panel-body text-center">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum, nemo ipsam? Asperiores eaque eveniet quo, debitis numquam reprehenderit modi provident! Repellat tempora rerum obcaecati cum fugiat, dicta similique minus iure!</p>
+    <!-- instructions -->
+        <div class=row>
+            <div class="panel col-12">
+                <div class="panel-heading panel-game-title ">
+                    <h1 class="text-center">
+                        <img src="assets/images/gem2.svg" alt="gem2" style="width: 80px;">
+                        Crystal Collector
+                        <img src="assets/images/gem2.svg" alt="gem2" style="width: 80px;">
+                    </h1>
+                </div>
+                <div class="panel-body text-center">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum, nemo ipsam? Asperiores eaque
+                        eveniet quo, debitis numquam reprehenderit modi provident! Repellat tempora rerum obcaecati cum
+                        fugiat, dicta similique minus iure!</p>
+                </div>
             </div>
         </div>
-    </div>
 
     <!--game content-->
-    <div class=row>
-        
-        <div class="panel panel-primary col-3">
-            <div class="panel-heading panel-sum">
-            <h5 class="panel-title text-center">Target Sum</h5>
+        <div class="row row-game">
+
+            <div class="panel panel-primary col-3">
+                <div class="panel-heading panel-sum">
+                    <h5 class="panel-title text-center">Target Sum</h5>
+                </div>
+                <div class="panel-body text-center">
+                    <h2>##</h2>
+                </div>
             </div>
-            <div class="panel-body text-center">
-                <h2>##</h2>
+
+            <div class="panel panel-primary col-3">
+                <div class="panel-heading panel-sum">
+                    <h5 class="panel-title text-center">Your Sum</h5>
+                </div>
+                <div class="panel-body text-center">
+                    <h2>##</h2>
+                </div>
             </div>
-        </div>
-    
-        <div class="panel panel-primary col-3">
-            <div class="panel-heading panel-sum">
-            <h5 class="panel-title text-center">Your Sum</h5>
+
+            <div class="panel panel-primary col-6">
+                <!-- <div class="panel-heading panel-crystal-options">
+                    <h5 class="panel-title text-center">Crystal Options</h5>
+                </div> -->
+                <div class="panel-body panel-crystals text-center">
+                    <img src="assets/images/gem1.svg" alt="gem1" style="width: 90px;">
+                    <img src="assets/images/gem2.svg" alt="gem2" style="width: 90px;">
+                    <img src="assets/images/gem3.svg" alt="gem3" style="width: 90px;">
+                    <img src="assets/images/gem4.svg" alt="gem4" style="width: 90px;">
+                </div>
             </div>
-            <div class="panel-body text-center">
-            <h2>##</h2>
+
+    <!-- wins and losses counter-->
+            <div class="panel panel-primary col-6">
+                <div class="panel-heading">
+                    <h5 class="panel-title text-center">Wins</h5>
+                </div>
+                <div class="panel-body panel-counter text-center">##
+                </div>
+            </div>
+
+            <div class="panel panel-primary col-6">
+                <div class="panel-heading">
+                    <h5 class="panel-title text-center">Losses</h5>
+                </div>
+                <div class="panel-body panel-counter text-center">##
+                </div>
             </div>
         </div>
 
-        <div class="panel panel-primary col-6">
-            <div class="panel-heading panel-crystal-options">
-            <h5 class="panel-title text-center">Crystal Options</h5>
-            </div>
-            <div class="panel-body text-center">
-                <img src="assets/images/gem1.svg" alt="gem1" style="width: 80px;">
-                <img src="assets/images/gem2.svg" alt="gem2" style="width: 80px;">
-                <img src="assets/images/gem3.svg" alt="gem3" style="width: 80px;">
-                <img src="assets/images/gem4.svg" alt="gem4" style="width: 80px;">
-            </div>
-        </div>
-    
-        <!-- wins and losses counter-->
-        <div class="panel panel-primary col-6">
-            <div class="panel-heading">
-            <h5 class="panel-title text-center">Wins</h5>
-            </div>
-            <div class="panel-body text-center">##
-            </div>
-        </div>
 
-        <div class="panel panel-primary col-6">
-            <div class="panel-heading">
-            <h5 class="panel-title text-center">Losses</h5>
-            </div>
-            <div class="panel-body text-center">##
-            </div>
-        </div>
+
     </div>
 
 
 
-</div>
-    
-
-
-
-
-
-
-
-
-    
     </div>
-    
+
 </body>
 
 <!--Javascript-->

@@ -18,14 +18,13 @@ body {
 
 h1 {
     font-family: 'Anton', sans-serif;
-    color: #ED1E79;
+    color: white;
     text-transform: uppercase;
     font-size: 50px;
 }
 
 .jumbotron {
     background-color: white;
-    padding: 50px;
 }
 
 .panel {
@@ -37,7 +36,12 @@ h1 {
     background-color: #36B9ED;
     padding: 10px 10px 5px 10px;
     color: white;
-    border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0px 0px;
+
+}
+
+.panel-game-title {
+    background-color: #ED1E79;
 
 }
 
@@ -53,6 +57,24 @@ h1 {
     background-color: white;
     border-radius: 0 0 5px 5px;
     padding: 20px;
+}
 
+.panel-crystals {
+    background-color: #FADC13;
+    border-radius: 0 0 5px 5px;
+    padding: 20px;
+}
 
+.panel-counter {
+    background-color: white;
+}
+
+.panel {
+    -left: 0px;
+    margin-right: 0px;
+    margin-top: 40px;
+}
+
+.row-game {
+    background-color: #FADC13;
 }
