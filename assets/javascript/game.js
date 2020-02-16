@@ -93,7 +93,12 @@ var StartGame = function() {
 
 //add the clicks together
 var addValues = function (gem) {
+
     userSum = userSum + gem.value;
+
+    //testing
+    console.log("your score is: " + userSum)
+
 }
 
 
@@ -108,18 +113,28 @@ StartGame();
 //click functions for the gems
 
 $("#gem1").click(function(){
-    alert("you clicked on: gem1")
+    //alert("you clicked on: gem1")
+    
+    addValues(gem.gem1)
 })
 
 $("#gem2").click(function(){
-    alert("you clicked on: gem2")
+    //alert("you clicked on: gem2")
+
+    addValues(gem.gem2)
+
 })
 
 $("#gem3").click(function(){
-    alert("you clicked on: gem3")
+    //alert("you clicked on: gem3")
+    
+    addValues(gem.gem3)
 })
 
 $("#gem4").click(function(){
-    alert("you clicked on: gem4")
+    //alert("you clicked on: gem4")
+
+
+    addValues(gem.gem4)
 })
 
