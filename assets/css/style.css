@@ -11,6 +11,9 @@ white
 
 body {
     background-color: #FADC13;
+    font-family: 'Montserrat', sans-serif;
+    color: #770F3D;
+
 }
 
 h1 {
@@ -21,9 +24,35 @@ h1 {
 }
 
 .jumbotron {
-  text-align: center;
-  background-color: white;
+    background-color: white;
+    padding: 50px;
 }
 
-.jumbotron img {
+.panel {
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.panel-heading {
+    background-color: #36B9ED;
+    padding: 10px 10px 5px 10px;
+    color: white;
+    border-radius: 5px 5px 0 0;
+
+}
+
+.panel-sum {
+    background-color: #ED1E79;
+}
+
+.panel-crystal-options {
+    background-color: #ED1E79;
+}
+
+.panel-body {
+    background-color: white;
+    border-radius: 0 0 5px 5px;
+    padding: 20px;
+
+
 }
