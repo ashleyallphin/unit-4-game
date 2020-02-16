@@ -20,7 +20,7 @@ h1 {
     font-family: 'Anton', sans-serif;
     color: white;
     text-transform: uppercase;
-    font-size: 50px;
+    font-size: 70px;
 }
 
 .jumbotron {
@@ -42,6 +42,7 @@ h1 {
 
 .panel-game-title {
     background-color: #ED1E79;
+    padding: 40px;
 
 }
 

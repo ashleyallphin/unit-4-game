@@ -84,7 +84,7 @@ var StartGame = function() {
 
 //add up the crystals
 var addGemValues = function(gem) {
-    userSum = userSum + gem1;
+    userSum = userSum + 100000;
     console.log(userSum)
     //testing
 
