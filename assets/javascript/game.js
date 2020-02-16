@@ -15,7 +15,6 @@
 //GLOBAL VARIABLES
 //=================================================
 
-
 //sums
 var userSum = 0;
 var targetSum = 0; 
@@ -50,6 +49,11 @@ var gem = {
 var winCount = 0;
 var lossCount = 0;
 
+
+//sounds
+var soundCollect = new Audio ("assets/sounds/gem_collect.mp3");
+var soundWin = new Audio ("assets/sounds/gem_win.mp3");
+var soundLose = new Audio ("assets/sounds/gem_lose.mp3");
 
 //FUNCTIONS
 //=================================================
@@ -114,27 +118,26 @@ StartGame();
 
 $("#gem1").click(function(){
     //alert("you clicked on: gem1")
-    
+    soundCollect.play();
     addValues(gem.gem1)
 })
 
 $("#gem2").click(function(){
     //alert("you clicked on: gem2")
-
+    soundCollect.play();
     addValues(gem.gem2)
 
 })
 
 $("#gem3").click(function(){
     //alert("you clicked on: gem3")
-    
+    soundCollect.play();
     addValues(gem.gem3)
 })
 
 $("#gem4").click(function(){
     //alert("you clicked on: gem4")
-
-
+    soundCollect.play();
     addValues(gem.gem4)
 })
 
