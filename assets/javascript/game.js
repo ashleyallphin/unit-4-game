@@ -112,18 +112,18 @@ var checkWin = function() {
 
     if(userSum > targetSum) {
         
-        //alert the user that they lost
-        alert ("Sorry!  You lost.");
-        
         //play soundLose
         soundLose.play();
+
+        //alert the user that they lost
+        alert ("Sorry!  You lost.");
         
         //add a loss
         lossCount++;
         console.log(lossCount);
 
         //add losses to HTML
-        $("#losses-text").html(lossCount);
+        $(".losses-text").html(lossCount);
 
         //restart game
         startGame();
@@ -131,11 +131,11 @@ var checkWin = function() {
     }
     else if (userSum === targetSum) {
         
-        //alert the user that they won
-        alert ("Congratulations!  You won.");
-        
         //play sound win
         soundWin.play();
+
+        //alert the user that they won
+        alert ("Congratulations!  You won.");
         
         //add a win
         winCount++;
@@ -143,7 +143,7 @@ var checkWin = function() {
 
 
         //add wins to HTML
-        $("#wins-text").html(winCount);
+        $(".wins-text").html(winCount);
 
         //restart game
         startGame();
