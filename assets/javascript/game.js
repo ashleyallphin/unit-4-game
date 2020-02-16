@@ -87,9 +87,6 @@ var StartGame = function() {
     console.log("gem3: " + gem.gem3.value);
     console.log("gem4: " + gem.gem4.value);
 
-
-    //put into HTML
-
 }
 
 //add the clicks together
@@ -97,15 +94,53 @@ var addValues = function (gem) {
 
     userSum = userSum + gem.value;
 
+    //put into HTML
     $( "#your-sum-text" ).html(userSum);
 
+    //call checkWin function
+    checkWin()
 
     //testing
     console.log("userSum= " + userSum)
 
 }
 
+//check if user wins
+var checkWin = function() {
 
+    if(userSum > targetSum) {
+        
+        //alert the user that they lost
+        alert ("Sorry!  You lost.");
+        
+        //play soundLose
+        soundLose.play();
+        
+        //add a loss
+        lossCount++;
+        console.log(lossCount);
+
+        //add losses to HTML
+        $("#losses-text").html(lossCount);
+    }
+    else if (userSum === targetSum) {
+        
+        //alert the user that they won
+        alert ("Congratulations!  You won.");
+        
+        //play sound win
+        soundWin.play();
+        
+        //add a win
+        winCount++;
+        console.log(winCount);
+
+
+        //add wins to HTML
+        $("#wins-text").html(winCount);
+
+    }
+}
 
 
 //CALL FUNCTIONS
