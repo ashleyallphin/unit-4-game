@@ -64,7 +64,8 @@ var getRandom = function(min, max) {
 
 var startGame = function() {
     //pick random targetSum number 19-120
-    targetSum = Math.floor(Math.random() * 120 + 19);
+    targetSum = Math.floor(Math.random() * (120 - 19) + 19);
+    
     //testing
     console.log("targetSum: " + targetSum);
 
