@@ -43,4 +43,4 @@ The goal of this assignment is to demonstrate working knowledge of HTML, CSS, ja
 
 ### Resources & Credits
 
-Gem images from Vectors by [Vecteezy] (http://www.vecteezy.com)
+Gem images from Vectors by [Vecteezy](https://www.vecteezy.com)
