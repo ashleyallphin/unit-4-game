@@ -1,8 +1,12 @@
 # Unit 4 Game: Crystal Collector
 
 **Ashley Allphin**
+
 Unit 4 Game: jQuery Homework
+
 Boot Camp UTA-VIRT-FSF-PT-01-2020-U-LOL
+
+[Playable Version](https://ashleyallphin.github.io/unit-4-game/)
 
 ### How does the game work?
 
